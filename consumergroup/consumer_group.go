@@ -250,6 +250,10 @@ func (cg *ConsumerGroup) FlushOffsets() error {
 	return cg.offsetManager.Flush()
 }
 
+func (cg *ConsumerGroup) Instance() *kazoo.ConsumergroupInstance {
+	return cg.instance
+}
+
 func (cg *ConsumerGroup) topicListConsumer(topics []string) {
 	for {
 		select {
